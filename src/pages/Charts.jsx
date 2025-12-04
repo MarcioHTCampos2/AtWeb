@@ -1,4 +1,5 @@
 import { Chart } from 'react-google-charts'
+import './Charts.css'
 
 export default function Charts({ cart }) {
   const byCategory = cart.reduce((acc, i) => {
@@ -10,14 +11,21 @@ export default function Charts({ cart }) {
 
   const options = {
     title: 'Itens por categoria',
-    legend: { position: 'right' }
+    titleTextStyle: { color: '#ffffff' },
+    legend: { position: 'right', textStyle: { color: '#ffffff' } },
+    backgroundColor: { fill: 'transparent' },
+    chartArea: { width: '75%', height: '75%' },
+    pieSliceTextStyle: { color: '#ffffff' },
+    colors: ['#646cff', '#535bf2', '#ff6b6b', '#ffa94d', '#51cf66', '#15aabf']
   }
 
   return (
-    <div>
+    <div className="charts-page">
       <h2>Gráficos</h2>
       {data.length > 1 ? (
-        <Chart chartType="PieChart" width={'100%'} height={'360px'} data={data} options={options} />
+        <div className="chart-wrapper">
+          <Chart chartType="PieChart" width={'100%'} height={'100%'} data={data} options={options} />
+        </div>
       ) : (
         <p>Adicione itens ao carrinho para visualizar os gráficos</p>
       )}

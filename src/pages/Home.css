@@ -1,0 +1,16 @@
+.categories-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* tudo em uma coluna (vertical) */
+  gap: 1rem;
+  margin-top: 1rem;
+  box-sizing: border-box;
+}
+
+.category-link {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

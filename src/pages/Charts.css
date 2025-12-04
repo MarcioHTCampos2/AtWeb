@@ -1,0 +1,12 @@
+.charts-page {
+  color: #fff;
+}
+
+.chart-wrapper {
+  height: 100vh ;         /* aumenta a altura do gráfico */
+  max-width: 1200px;     /* evita esticar demais em telas enormes */
+  margin: 0 auto;        /* centra horizontalmente */
+  padding: 0 1rem;
+  box-sizing: border-box;
+  background: transparent;
+}

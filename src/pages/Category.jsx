@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
+import './Category.css'
 
 export default function Category({ menu, addToCart }) {
   const { id } = useParams()
@@ -16,12 +17,12 @@ export default function Category({ menu, addToCart }) {
   return (
     <div>
       <h2>{category.name}</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '1rem', marginTop: '1rem' }}>
+      <div className="category-grid">
         {category.items.map((item) => (
-          <div key={item.id} style={{ border: '1px solid #ddd', borderRadius: 8, padding: '1rem' }}>
-            <div style={{ fontWeight: 600 }}>{item.name}</div>
-            <div style={{ color: '#666', margin: '0.5rem 0' }}>{item.description}</div>
-            <div style={{ marginBottom: '0.75rem' }}>R$ {item.price.toFixed(2)}</div>
+          <div key={item.id} className="category-item">
+            <div className="name">{item.name}</div>
+            <div className="desc">{item.description}</div>
+            <div className="price">R$ {item.price.toFixed(2)}</div>
             <button onClick={() => addToCart(item)}>Adicionar</button>
           </div>
         ))}

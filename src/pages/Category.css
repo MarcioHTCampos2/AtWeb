@@ -1,0 +1,36 @@
+.category-grid {
+  display: grid;
+  /* usar largura fixa por coluna para que o grid total possa ser centralizado */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 240px));
+  gap: 1rem;
+  margin: 1rem auto 0;
+  justify-content: center; /* centraliza o conjunto de colunas */
+  max-width: 1280px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.category-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 240px; /* garante que cada card não exceda a largura da coluna */
+  box-sizing: border-box;
+  background: var(--card-bg, #2a2a2e);
+  margin: 0 auto; /* centro interno caso necessário */
+}
+
+.category-item .name {
+  font-weight: 600;
+}
+
+.category-item .desc {
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.category-item .price {
+  margin-bottom: 0.75rem;
+}
+

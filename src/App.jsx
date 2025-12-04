@@ -33,12 +33,12 @@ function App() {
 
   const cartCount = useMemo(() => cart.reduce((sum, i) => sum + i.quantity, 0), [cart])
 
-  return (
+    return (
     <BrowserRouter>
-      <div style={{ maxWidth: 960, margin: '0 auto', padding: '1rem' }}>
-        <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-          <Link to="/" style={{ textDecoration: 'none', fontWeight: 700, fontSize: '1.25rem' }}>Cardápio Digital</Link>
-          <nav style={{ display: 'flex', gap: '1rem' }}>
+      <div className="app-container">
+        <header className="app-header">
+          <Link to="/" className="app-logo">Cardápio Digital</Link>
+          <nav className="app-nav">
             <Link to="/">Início</Link>
             <Link to="/cart">Carrinho ({cartCount})</Link>
             <Link to="/charts">Gráficos</Link>
